@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Service Directory</title>
+  <!-- Tailwind + DaisyUI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 py-4 bg-white shadow">
+    <!-- Logo + Name -->
+    <div class="flex items-center gap-2">
+      <img src="assets/logo.png" alt="logo" class="w-8 h-8"/>
+      <span class="text-green-900 font-bold">Emergency<br> Service</span>
+    </div>
+    <!-- Right Section -->
+    <div class="flex items-center gap-4">
+      <span id="heartCount" class="flex items-center gap-1">
+        <img src="assets/heart.png"  alt="heart" class="w-5 h-5"/> <span>0</span>
+      </span>
+      <span id="coinCount" class="flex items-center gap-1">
+        <img src="assets/coin.png" alt="coin" class="w-5 h-5"/> 
+        <span id="coins">100</span>
+      </span>
+      <span id="copyCount" class="px-3 py-1 bg-green-500 text-white rounded">
+        Copy: <span id="copyCounter">0</span>
+      </span>
+    </div>
+  </nav>
+
+  <!-- ✅ Hero Section -->
+  <section class="bg-gradient-to-r from-green-800 to-green-600 text-white py-10 text-center">
+    <img src="assets/logo-dark.png" class="mx-auto w-20 mb-4" alt="gov logo"/>
+    <h1 class="text-2xl font-bold">Emergency Service Directory</h1>
+    <p class="mt-2">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+  </section>
+
+  <!-- ✅ Main Section -->
+  <section class="grid grid-cols-12 gap-4 px-6 py-6">
+
+    <!-- Left: Card Section -->
+    <div class="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-4">
+
+      <!-- Example Card -->
+      <div class="card bg-white shadow p-4">
+        <div class="flex justify-between">
+          <img src="assets/emergency.png" class="bg-red-200 w-8 h-8" alt="icon"/>
+          <span class="cursor-pointer" onclick="increaseHeart()">💗</span>
+        </div>
+        <h2 class="text-gray-900 font-bold mt-2">National Emergency Number</h2>
+        <P class="mt-2">National Emergency</P>
+        <p class="text-sm text-gray-600">999</p>
+        <span class="badge badge-error text-white mt-1">All</span>
+        <div class="flex justify-between mt-3">
+          <button onclick="copyNumber('999','National Emergency Number')" class="bg-white text-green-900 btn btn-sm">📋 Copy</button>
+          <button onclick="callService('National Emergency Number','999')" class="bg-green-500 btn btn-sm btn-success">📞 Call</button>
+        </div>
+      </div>
+
+      <!-- Card1 -->
+      <div class="card bg-white shadow p-4">
+        <div class="flex justify-between">
+          <img src="assets/police.png" class="bg-blue-200 w-8 h-8" alt="icon"/>
+          <span class="cursor-pointer" onclick="increaseHeart()">💗</span>
+        </div>
+        <h2 class="text-gray-900 font-bold mt-2">Police Helpline Number</h2>
+        <P class="mt2">Police</P>
+        <p class="text-sm text-gray-600">999</p>
+        <span class="badge badge-accent text-white mt-1">Police</span>
+        <div class="flex justify-between mt-3">
+          <button onclick="copyNumber('999','Police Helpline')" class="bg-white text-green-900 btn btn-sm">📋 Copy</button>
+          <button onclick="callService('Police Helpline','999')" class="bg-green-500 btn btn-sm btn-success">📞 Call</button>
+        </div>
+      </div>
+
+      <!-- Card2 -->
+      <div class="card bg-white shadow p-4">
+        <div class="flex justify-between">
+          <img src="assets/fire-service.png" class="bg-red-200 w-8 h-8" alt="icon"/>
+          <span class="cursor-pointer" onclick="increaseHeart()">💗</span>
+        </div>
+        <h2 class="text-gray-900 font-bold mt-2">Fire Service Number</h2>
+        <P>Fire Service</P>
+        <p class="text-sm text-gray-600">999</p>
+        <span class="badge badge-warning text-white mt-1">Fire</span>
+        <div class="flex justify-between mt-3">
+          <button onclick="copyNumber('999','Fire Service')" class="bg-white text-green-900 btn btn-sm">📋 Copy</button>
+          <button onclick="callService('Fire Service','999')" class="bg-green-500 btn btn-sm btn-success">📞 Call</button>
+        </div>
+      </div>
+ 
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
